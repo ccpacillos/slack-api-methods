@@ -1,3 +1,3 @@
-# typescript-template
+# slack-api-methods
 
-A Project Template in Typescript
+Slack API Methods

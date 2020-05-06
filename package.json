@@ -1,12 +1,12 @@
 {
-  "name": "ts-project-template",
+  "name": "slack-methods-api",
   "version": "0.0.1",
-  "description": "Typescript project template.",
+  "description": "Slack Methods API",
   "scripts": {
     "lint": "eslint --ext .ts,.tsx src/** --cache && tsc --noEmit --skipLibCheck",
     "resolve-paths": "tscpaths -p tsconfig.build.json -s ./src -o ./build",
     "build": "rimraf ./build && tsc --skipLibCheck --project tsconfig.build.json && npm run resolve-paths",
-    "start": "env $(cat .env) ts-node --files --transpile-only -r tsconfig-paths/register src/index"
+    "start": "ts-node --files --transpile-only -r tsconfig-paths/register src/index"
   },
   "repository": {
     "type": "git",
@@ -41,7 +41,13 @@
     "tscpaths": "0.0.9",
     "typescript": "^3.8.3"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/qs": "^6.9.1",
+    "axios": "^0.19.2",
+    "qs": "^6.9.4",
+    "snake-case": "^3.0.3"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged && npm run lint"
